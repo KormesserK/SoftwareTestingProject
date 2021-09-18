@@ -1,0 +1,36 @@
+﻿@page "/AddEmployee"
+
+@inherits UserAdministration.Data.Employee
+
+<h1>Add Employee</h1>
+
+<EditForm Model="@Employee">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label for="FirstName">FirstName</label>
+    <InputText id="firstName" @bind-Value="Firstname"></InputText>
+    <label for="FirstName">FirstName</label>
+    <InputText id="firstName" @bind-Value="Lastname"></InputText>
+    <label for="FirstName">FirstName</label>
+    <InputText id="firstName" @bind-Value="SocialSecurityNumber"></InputText>
+
+    <button class="btn" onclick="AddUserToCSV()"></button>"
+
+</EditForm>
+
+
+
+@code {
+
+    private UserAdministration.Data.Employee Employee;
+
+    private int currentCount = 0;
+
+    private void AddUserToCSV()
+    {
+        UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee)
+    }
+
+
+}
