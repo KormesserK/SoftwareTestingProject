@@ -62,12 +62,12 @@ namespace UserAdministration.Data
         {
             if (!File.Exists(c_FileName))
             {
-                string header = "Firstname;Lastname,SocialSecurityNumber;Birthdate";
+                string header = "Firstname;Lastname;SocialSecurityNumber;Birthdate";
                 File.WriteAllText(c_FileName, header);
             }
         }
 
-        private static List<Employee> ReadAllEmployees()
+        public static List<Employee> ReadAllEmployees()
         {
             var allLines = File.ReadAllLines(c_FileName);
             List<Employee> employeeList = CreateEmployeeListFromLines(allLines);

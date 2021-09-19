@@ -8,14 +8,20 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <label for="FirstName">FirstName</label>
-    <InputText id="firstName" @bind-Value="Firstname"></InputText>
-    <label for="FirstName">FirstName</label>
-    <InputText id="firstName" @bind-Value="Lastname"></InputText>
-    <label for="FirstName">FirstName</label>
-    <InputText id="firstName" @bind-Value="SocialSecurityNumber"></InputText>
+    <label for="FirstName">First Name</label>
+    <InputText id="firstName" @bind-Value="Employee.Firstname"></InputText>
+    <br />
+    <label for="FirstName">Last Name</label>
+    <InputText id="firstName" @bind-Value="Employee.Lastname"></InputText>
+    <br />
+    <label for="FirstName">SSN</label>
+    <InputText id="firstName" @bind-Value="Employee.SocialSecurityNumber"></InputText>
+    <br />
+    <label for="BirthDate">Birthdate</label>
+    <InputDate id="BirthDate" @bind-Value="Employee.Birthdate"></InputDate>
+    <br />
 
-    <button class="btn" onclick="AddUserToCSV()"></button>"
+    <button type="submit">Add Employee</button>
 
 </EditForm>
 
@@ -23,14 +29,10 @@
 
 @code {
 
-    private UserAdministration.Data.Employee Employee;
+    private UserAdministration.Data.Employee Employee = new Data.Employee();
 
-    private int currentCount = 0;
-
-    private void AddUserToCSV()
+    private void HandleValidSubmit()
     {
-        UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee)
+        UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
     }
-
-
 }
