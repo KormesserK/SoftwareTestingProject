@@ -64,8 +64,7 @@ namespace UserAdministration.Data
             if (!File.Exists(c_FileName))
             {
                 Console.WriteLine("new File created");
-                string header = "Firstname;Lastname;SocialSecurityNumber;Birthdate";
-                File.WriteAllText(c_FileName, header);
+                File.WriteAllText(c_FileName, "");
             }
         }
 
@@ -76,9 +75,8 @@ namespace UserAdministration.Data
                 var allLines = File.ReadLines(c_FileName);
                 List<Employee> employeeList = CreateEmployeeListFromLines(allLines);
                 return employeeList;
-            }catch (Exception ex)
-            {
-                
+            }catch (Exception)
+            { 
                 return new List<Employee>();
             }
         }
