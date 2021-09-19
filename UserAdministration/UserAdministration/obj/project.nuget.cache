@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KqxBn24KyrcFBU+UDF5r03zpwCqvwjrXbuaBMdnvhQZ2hK5wahuHubK17wf7F3z9pzqTJGxaaTEBMcaaQjvWEA==",
+  "dgSpecHash": "amsolpO4cxLCU2PsfGjzLzSIiz6euy80TTosKBXkVUzC/JaX+146W3f49/ZUIErfOvwfjEcjqpvYdNi8xnt9bA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Korme\\Documents\\Dev\\SoftwareTesting\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+  "projectFilePath": "C:\\Dev\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Korme\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
     "C:\\Users\\Korme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"

@@ -124,21 +124,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Korme\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Korme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Korme\\Documents\\Dev\\SoftwareTesting\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+      "projectUniqueName": "C:\\Dev\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
       "projectName": "UserAdministration",
-      "projectPath": "C:\\Users\\Korme\\Documents\\Dev\\SoftwareTesting\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+      "projectPath": "C:\\Dev\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
       "packagesPath": "C:\\Users\\Korme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Korme\\Documents\\Dev\\SoftwareTesting\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
+      "outputPath": "C:\\Dev\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Korme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -187,7 +183,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
