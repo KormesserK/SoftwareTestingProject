@@ -10,7 +10,7 @@ namespace UserAdministration.Data
 {
     public class Employee : ComponentBase
     {
-        private static string c_FileName = "\\Employee.csv";
+        private static string c_FileName = "Employee.csv";
 
         [Required]
         public string Firstname { get; set; } = "";
@@ -51,6 +51,7 @@ namespace UserAdministration.Data
 
         public static void WriteEmployeeToCSV(Employee employee)
         {
+            Console.WriteLine("Write Employee: " + employee.ToCSVLine());
             CheckIfFileExists_IfNot_Create();
             var csvLines = new List<string>();
             csvLines.Add(employee.ToCSVLine());
@@ -62,6 +63,7 @@ namespace UserAdministration.Data
         {
             if (!File.Exists(c_FileName))
             {
+                Console.WriteLine("new File created");
                 string header = "Firstname;Lastname;SocialSecurityNumber;Birthdate";
                 File.WriteAllText(c_FileName, header);
             }
@@ -69,12 +71,19 @@ namespace UserAdministration.Data
 
         public static List<Employee> ReadAllEmployees()
         {
-            var allLines = File.ReadAllLines(c_FileName);
-            List<Employee> employeeList = CreateEmployeeListFromLines(allLines);
-            return employeeList;
+            try
+            {
+                var allLines = File.ReadLines(c_FileName);
+                List<Employee> employeeList = CreateEmployeeListFromLines(allLines);
+                return employeeList;
+            }catch (Exception ex)
+            {
+                
+                return new List<Employee>();
+            }
         }
 
-        private static List<Employee> CreateEmployeeListFromLines(string[] allLines)
+        private static List<Employee> CreateEmployeeListFromLines(IEnumerable<string> allLines)
         {
             var employeeList = new List<Employee>();
 

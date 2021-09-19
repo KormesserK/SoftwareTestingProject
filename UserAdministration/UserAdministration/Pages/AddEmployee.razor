@@ -4,7 +4,7 @@
 
 <h1>Add Employee</h1>
 
-<EditForm Model="@Employee">
+<EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -31,8 +31,11 @@
 
     private UserAdministration.Data.Employee Employee = new Data.Employee();
 
+
+
     private void HandleValidSubmit()
     {
+        Console.WriteLine("HandleValidSubmit called");
         UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
     }
 }
