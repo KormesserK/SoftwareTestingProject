@@ -12,6 +12,9 @@ namespace UserAdministration.Data
     {
         private static string c_FileName = "Employee.csv";
 
+        //gets set somehow.
+        public string ID { get; set; }
+
         [Required]
         public string Firstname { get; set; } = "";
 
@@ -24,13 +27,17 @@ namespace UserAdministration.Data
         [Required]
         public DateTime Birthdate { get; set; } = new DateTime(1900, 1, 1);
 
+        [Required]
+        public bool IsActive { get; set; } = false;
+
         public Employee(string firstname, string lastname, string socialSecurityNumber, 
-            DateTime birthdate)
+            DateTime birthdate, bool isActive)
         {
             Firstname = firstname;
             Lastname = lastname;
             SocialSecurityNumber = socialSecurityNumber;
             Birthdate = birthdate;
+            IsActive = isActive;
         }
 
         public Employee()
@@ -44,7 +51,7 @@ namespace UserAdministration.Data
 
         public string ToCSVLine()
         {
-            return Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day;
+            return Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive;
         }
 
 
@@ -88,17 +95,23 @@ namespace UserAdministration.Data
             foreach (var line in allLines)
             {
                 var splitLine = line.Split(';');
-                if (splitLine.Length != 4)
+                if (splitLine.Length != 5)
                 {
                     throw new Exception("Error while reading file, the amount of arguments in this line is not correct");
                 }
 
                 var birthdate = splitLine[3].Split(',');
-                var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])));
+                var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], 
+                    new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])), Convert.ToBoolean(splitLine[5]));
                 employeeList.Add(employee);
             }
 
             return employeeList;
+        }
+
+        public static void UpdateEmployee(Employee employee)
+        {
+            //not yet supported.
         }
     }
 }

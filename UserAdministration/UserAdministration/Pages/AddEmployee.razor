@@ -20,6 +20,9 @@
     <label for="BirthDate">Birthdate</label>
     <InputDate id="BirthDate" @bind-Value="Employee.Birthdate"></InputDate>
     <br />
+    <label for="IsActive">Is Active?</label>
+    <input type="checkbox" id="IsActive" @bind="Employee.IsActive"></input>
+    <br />
 
     <button type="submit">Add Employee</button>
 
@@ -37,5 +40,6 @@
     {
         Console.WriteLine("HandleValidSubmit called");
         UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
+        Employee = new Data.Employee();
     }
 }
