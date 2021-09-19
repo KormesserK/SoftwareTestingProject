@@ -44,7 +44,7 @@ namespace UserAdministration.Data
 
         public string ToCSVLine()
         {
-            return Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate;
+            return Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day;
         }
 
 
@@ -93,7 +93,8 @@ namespace UserAdministration.Data
                     throw new Exception("Error while reading file, the amount of arguments in this line is not correct");
                 }
 
-                var employee = new Employee(splitLine[0], splitLine[1], splitLine[3], Convert.ToDateTime(splitLine[4]));
+                var birthdate = splitLine[3].Split(',');
+                var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])));
                 employeeList.Add(employee);
             }
 
