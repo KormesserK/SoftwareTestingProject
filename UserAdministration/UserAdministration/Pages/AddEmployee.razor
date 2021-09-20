@@ -38,6 +38,7 @@
 
     private void HandleValidSubmit()
     {
+        Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
         Console.WriteLine("HandleValidSubmit called");
         UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
         Employee = new Data.Employee();

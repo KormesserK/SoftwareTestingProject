@@ -12,7 +12,6 @@ namespace UserAdministration.Data
     {
         private static string c_FileName = "Employee.csv";
 
-        //gets set somehow.
         public string ID { get; set; }
 
         [Required]
@@ -30,9 +29,10 @@ namespace UserAdministration.Data
         [Required]
         public bool IsActive { get; set; } = false;
 
-        public Employee(string firstname, string lastname, string socialSecurityNumber, 
+        public Employee(string iD, string firstname, string lastname, string socialSecurityNumber, 
             DateTime birthdate, bool isActive)
         {
+            ID = iD;
             Firstname = firstname;
             Lastname = lastname;
             SocialSecurityNumber = socialSecurityNumber;
@@ -46,19 +46,18 @@ namespace UserAdministration.Data
 
         public bool AllPropertiesSet()
         {
-            return (Firstname != "" && Lastname != "" && SocialSecurityNumber != "" && Birthdate != new DateTime(1900, 1, 1));
+            return (ID != "" &&Firstname != "" && Lastname != "" && SocialSecurityNumber != "" && Birthdate != new DateTime(1900, 1, 1));
         }
 
         public string ToCSVLine()
         {
-            return Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive;
+            return ID + ";" +Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive;
         }
 
 
 
         public static void WriteEmployeeToCSV(Employee employee)
         {
-            Console.WriteLine("Write Employee: " + employee.ToCSVLine());
             CheckIfFileExists_IfNot_Create();
             var csvLines = new List<string>();
             csvLines.Add(employee.ToCSVLine());
@@ -72,6 +71,13 @@ namespace UserAdministration.Data
             {
                 Console.WriteLine("new File created");
                 File.WriteAllText(c_FileName, "");
+            }
+        }
+
+        public static void OverrideWholeCSVFile(List<Employee> employeeList){
+            File.Delete(c_FileName);
+            foreach(var employee in employeeList){
+                Employee.WriteEmployeeToCSV(employee);
             }
         }
 
@@ -95,13 +101,13 @@ namespace UserAdministration.Data
             foreach (var line in allLines)
             {
                 var splitLine = line.Split(';');
-                if (splitLine.Length != 5)
+                if (splitLine.Length != 6)
                 {
                     throw new Exception("Error while reading file, the amount of arguments in this line is not correct");
                 }
 
-                var birthdate = splitLine[3].Split(',');
-                var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], 
+                var birthdate = splitLine[4].Split(',');
+                var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], splitLine[3],
                     new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])), Convert.ToBoolean(splitLine[5]));
                 employeeList.Add(employee);
             }
@@ -109,9 +115,22 @@ namespace UserAdministration.Data
             return employeeList;
         }
 
-        public static void UpdateEmployee(Employee employee)
+        public static void UpdateEmployee(List<Employee> employeeList, Employee employee)
         {
-            //not yet supported.
+            int indexOfEmployeeToChange = -1;
+            foreach(var emp in employeeList)
+            {
+                if(employee.ID == emp.ID)
+                {
+                    indexOfEmployeeToChange = employeeList.IndexOf(emp);
+                }
+            }
+
+            if (indexOfEmployeeToChange != -1)
+            {
+                employeeList[indexOfEmployeeToChange] = employee;
+                Employee.OverrideWholeCSVFile(employeeList);
+            }
         }
     }
 }

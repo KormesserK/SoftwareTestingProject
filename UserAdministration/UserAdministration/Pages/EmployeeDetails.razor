@@ -1,0 +1,58 @@
+﻿@page "/EditEmployee"
+
+<h3>Details</h3>
+
+<EditForm  Model="@ShownEmployee">
+    <label for="ID">ID</label>
+    <InputText id="ID" @bind-Value="ShownEmployee.ID"></InputText>
+    <br />
+    <label for="FirstName">First Name</label>
+    <InputText id="firstName" @bind-Value="ShownEmployee.Firstname"></InputText>
+    <br />
+    <label for="FirstName">Last Name</label>
+    <InputText id="firstName" @bind-Value="ShownEmployee.Lastname"></InputText>
+    <br />
+    <label for="FirstName">SSN</label>
+    <InputText id="firstName" @bind-Value="ShownEmployee.SocialSecurityNumber"></InputText>
+    <br />
+    <label for="BirthDate">Birthdate</label>
+    <InputDate id="BirthDate" @bind-Value="ShownEmployee.Birthdate"></InputDate>
+    <br />
+    <label for="IsActive">Is Active?</label>
+    <input type="checkbox" id="IsActive" @bind="ShownEmployee.IsActive"></input>
+    <br />
+
+    <button type="submit">Update Employee</button>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <button type="button" @onclick="() => ShowNextEmployee()">Next Employee</button>
+</EditForm>
+
+
+
+@code {
+
+    private List<Data.Employee> EmployeeList = Data.Employee.ReadAllEmployees();
+    private Data.Employee ShownEmployee = new Data.Employee();
+
+    protected override void OnInitialized()
+    {
+        ShownEmployee = EmployeeList.Count > 0 ? EmployeeList[0] : ShownEmployee;
+    }
+
+    private void ShowNextEmployee()
+    {
+        try
+        {
+            ShownEmployee = EmployeeList[EmployeeList.IndexOf(ShownEmployee)+1];
+        }
+        catch (Exception)
+        {
+        }
+    }
+
+}

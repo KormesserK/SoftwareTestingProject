@@ -13,7 +13,6 @@
             <th>Security Number</th>
             <th>Birthdate</th>
             <th>IsActive</th>
-            <th>Link</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +24,6 @@
                 <td>@employee.SocialSecurityNumber</td>
                 <td>@employee.Birthdate</td>
                 <td>@employee.IsActive</td>
-                <td><button type="button" onclick="navigateToUser(employee)"></button></td>
             </tr>
         }
     </tbody>
@@ -37,10 +35,5 @@
     protected override async Task OnInitializedAsync()
     {
         employees = await Task.FromResult(UserAdministration.Data.Employee.ReadAllEmployees());
-    }
-
-    private void navigateToUser(Data.Employee employee)
-    {
-        //navigates to data and shows details
     }
 }
