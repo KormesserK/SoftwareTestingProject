@@ -1,11 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "amsolpO4cxLCU2PsfGjzLzSIiz6euy80TTosKBXkVUzC/JaX+146W3f49/ZUIErfOvwfjEcjqpvYdNi8xnt9bA==",
+  "dgSpecHash": "8/iLmkscmPgqUrFm4LD0tQvNIqwW31Hs4dTEgsj4d2fx0mgWa74Hlppdw64ZcNcWXvToWMrOoCenxQ76UimT/w==",
   "success": true,
   "projectFilePath": "C:\\Dev\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Korme\\.nuget\\packages\\blazored.toast\\3.1.2\\blazored.toast.3.1.2.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\chartjs.blazor.fork\\2.0.2\\chartjs.blazor.fork.2.0.2.nupkg.sha512",
     "C:\\Users\\Korme\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
-    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.8\\microsoft.aspnetcore.authorization.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.8\\microsoft.aspnetcore.components.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\3.1.8\\microsoft.aspnetcore.components.analyzers.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\3.1.8\\microsoft.aspnetcore.components.forms.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.components.web\\3.1.8\\microsoft.aspnetcore.components.web.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.aspnetcore.metadata\\3.1.8\\microsoft.aspnetcore.metadata.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.8\\microsoft.extensions.dependencyinjection.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.8\\microsoft.extensions.logging.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.extensions.options\\3.1.8\\microsoft.extensions.options.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.8\\microsoft.extensions.primitives.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\microsoft.jsinterop\\3.1.8\\microsoft.jsinterop.3.1.8.nupkg.sha512",
+    "C:\\Users\\Korme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

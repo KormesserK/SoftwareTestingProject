@@ -1,0 +1,40 @@
+﻿@page "/EmployeeCount"
+
+<h3>EmployeeCount</h3>
+
+<EditForm Model="@EmployeeList">
+    @(NumberOfEmployeesString)
+
+    <br />
+
+    @(CalculatedGrowthString)
+
+
+</EditForm>
+
+    @code {
+        private List<Data.Employee> EmployeeList;
+        private string CalculatedGrowthString;
+        private string NumberOfEmployeesString;
+
+
+        protected override void OnInitialized()
+        {
+            EmployeeList = Data.Employee.ReadAllEmployees();
+            CalculatedGrowthString = CalculateGrowth();
+            NumberOfEmployeesString = NumberOfEmployees();
+        }
+
+        private string CalculateGrowth()
+        {
+            double startAmount = 4;
+            double actualAmount = EmployeeList.Count();
+            double growth = startAmount / actualAmount * 100;
+            return "This is a growth of " + Math.Round(growth, 2).ToString() + " percent";
+        }
+
+        private string NumberOfEmployees()
+        {
+            return "The number of our Employees has grown from 4 to " + EmployeeList.Count();
+        }
+    }

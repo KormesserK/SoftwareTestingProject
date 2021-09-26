@@ -1,0 +1,44 @@
+﻿@page "/NextBirthday"
+
+<h3>NextBirthday</h3>
+<br />
+
+<h5>The Next Birthday is:</h5>
+@(NextBirthdayEmp)
+
+
+@code {
+
+    private List<Data.Employee> EmployeeList;
+    private string NextBirthdayEmp;
+
+    protected override void OnInitialized()
+    {
+        EmployeeList = Data.Employee.ReadAllEmployees();
+        NextBirthdayEmp = NameOfNextBirthday();
+    }
+
+    private string NameOfNextBirthday()
+    {
+        var birthdayEmployee = CalculateNextBirthday();
+        return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Date;
+    }
+
+    private Data.Employee CalculateNextBirthday()
+    {
+        var minAmountBetweenNowAndBirthday = int.MaxValue;
+        var today = DateTime.Now;
+        Data.Employee nextBirthdayEmployee = new Data.Employee();
+
+        foreach(Data.Employee emp in EmployeeList)
+        {
+            emp.Birthdate = new DateTime(today.Year, emp.Birthdate.Month, emp.Birthdate.Day);
+            if ((emp.Birthdate - today).TotalDays < minAmountBetweenNowAndBirthday)
+            {
+                nextBirthdayEmployee = emp;
+            }
+        }
+        return nextBirthdayEmployee;
+    }
+
+}

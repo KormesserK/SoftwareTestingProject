@@ -19,16 +19,17 @@
     <InputDate id="BirthDate" @bind-Value="ShownEmployee.Birthdate"></InputDate>
     <br />
     <label for="IsActive">Is Active?</label>
-    <input type="checkbox" id="IsActive" @bind="ShownEmployee.IsActive"></input>
+    <input type="checkbox" id="IsActive" @bind="ShownEmployee.IsActive"/>
     <br />
 
-    <button type="submit">Update Employee</button>
+    <button type="submit" >Update Employee</button>
 
 
     <br />
     <br />
     <br />
     <br />
+    <button type="button" @onclick="() => ShowLastEmployee()">Last Employee</button>
     <button type="button" @onclick="() => ShowNextEmployee()">Next Employee</button>
 </EditForm>
 
@@ -49,6 +50,17 @@
         try
         {
             ShownEmployee = EmployeeList[EmployeeList.IndexOf(ShownEmployee)+1];
+        }
+        catch (Exception)
+        {
+        }
+    }
+
+    private void ShowLastEmployee()
+    {
+        try
+        {
+            ShownEmployee = EmployeeList[EmployeeList.IndexOf(ShownEmployee)-1];
         }
         catch (Exception)
         {
