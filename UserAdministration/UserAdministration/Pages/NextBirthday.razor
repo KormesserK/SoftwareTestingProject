@@ -28,14 +28,17 @@
     {
         var minAmountBetweenNowAndBirthday = int.MaxValue;
         var today = DateTime.Now;
+        EmployeeList = Data.Employee.ReadAllEmployees();
         Data.Employee nextBirthdayEmployee = new Data.Employee();
 
         foreach(Data.Employee emp in EmployeeList)
         {
             emp.Birthdate = new DateTime(today.Year, emp.Birthdate.Month, emp.Birthdate.Day);
-            if ((emp.Birthdate - today).TotalDays < minAmountBetweenNowAndBirthday)
+            var daysBetween = Convert.ToInt32(Math.Abs((emp.Birthdate - today).TotalDays));
+            if (daysBetween < minAmountBetweenNowAndBirthday)
             {
                 nextBirthdayEmployee = emp;
+                minAmountBetweenNowAndBirthday = daysBetween;
             }
         }
         return nextBirthdayEmployee;

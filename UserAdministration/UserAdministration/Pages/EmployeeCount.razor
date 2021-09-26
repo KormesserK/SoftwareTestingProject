@@ -27,9 +27,9 @@
 
         private string CalculateGrowth()
         {
-            double startAmount = 4;
+            double startAmount = 3;
             double actualAmount = EmployeeList.Count();
-            double growth = startAmount / actualAmount * 100;
+            double growth = actualAmount / startAmount * 100;
             return "This is a growth of " + Math.Round(growth, 2).ToString() + " percent";
         }
 
