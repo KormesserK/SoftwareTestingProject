@@ -94,7 +94,7 @@ namespace UserAdministration.Data
             }
         }
 
-        private static List<Employee> CreateEmployeeListFromLines(IEnumerable<string> allLines)
+        public static List<Employee> CreateEmployeeListFromLines(IEnumerable<string> allLines)
         {
             var employeeList = new List<Employee>();
 

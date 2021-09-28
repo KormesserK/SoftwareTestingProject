@@ -32,11 +32,11 @@
 
 @code {
 
-    private UserAdministration.Data.Employee Employee = new Data.Employee();
+    public UserAdministration.Data.Employee Employee = new Data.Employee();
 
 
 
-    private void HandleValidSubmit()
+    public void HandleValidSubmit()
     {
         Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
         Console.WriteLine("HandleValidSubmit called");
