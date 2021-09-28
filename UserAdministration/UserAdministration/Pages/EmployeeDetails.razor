@@ -2,7 +2,7 @@
 
 <h3>Details</h3>
 
-<EditForm  Model="@ShownEmployee">
+<EditForm  Model="@ShownEmployee" OnValidSubmit="@HandleValidSubmit">
     <label for="ID">ID</label>
     <InputText id="ID" @bind-Value="ShownEmployee.ID"></InputText>
     <br />
@@ -43,6 +43,12 @@
     protected override void OnInitialized()
     {
         ShownEmployee = EmployeeList.Count > 0 ? EmployeeList[0] : ShownEmployee;
+    }
+
+    private void HandleValidSubmit()
+    {
+        UserAdministration.Data.Employee.UpdateEmployee(EmployeeList, ShownEmployee);
+        Console.WriteLine("HandleValidSubmit called");
     }
 
     private void ShowNextEmployee()

@@ -21,7 +21,7 @@
     private string NameOfNextBirthday()
     {
         var birthdayEmployee = CalculateNextBirthday();
-        return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Date;
+        return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Day + "." + birthdayEmployee.Birthdate.Month + "." + birthdayEmployee.Birthdate.Year;
     }
 
     private Data.Employee CalculateNextBirthday()
@@ -31,16 +31,20 @@
         EmployeeList = Data.Employee.ReadAllEmployees();
         Data.Employee nextBirthdayEmployee = new Data.Employee();
 
-        foreach(Data.Employee emp in EmployeeList)
+        foreach (Data.Employee emp in EmployeeList)
         {
             emp.Birthdate = new DateTime(today.Year, emp.Birthdate.Month, emp.Birthdate.Day);
-            var daysBetween = Convert.ToInt32(Math.Abs((emp.Birthdate - today).TotalDays));
-            if (daysBetween < minAmountBetweenNowAndBirthday)
+            if (emp.Birthdate >= today)
             {
-                nextBirthdayEmployee = emp;
-                minAmountBetweenNowAndBirthday = daysBetween;
+                var daysBetween = Convert.ToInt32(Math.Abs((emp.Birthdate - today).TotalDays));
+                if (daysBetween < minAmountBetweenNowAndBirthday)
+                {
+                    nextBirthdayEmployee = emp;
+                    minAmountBetweenNowAndBirthday = daysBetween;
+                }
             }
         }
+    
         return nextBirthdayEmployee;
     }
 
