@@ -1,0 +1,3 @@
+C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\.vs\UserAdministration\v16\lut\0\i\UserAdministration.Test\Debug\net5.0\UserAdministration.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\.vs\UserAdministration\v16\lut\0\i\UserAdministration.Test\Debug\net5.0\UserAdministration.Test.AssemblyInfoInputs.cache
+C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\.vs\UserAdministration\v16\lut\0\i\UserAdministration.Test\Debug\net5.0\UserAdministration.Test.AssemblyInfo.cs

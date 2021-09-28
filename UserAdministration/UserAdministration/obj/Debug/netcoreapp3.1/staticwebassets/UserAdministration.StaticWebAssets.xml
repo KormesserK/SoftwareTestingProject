@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Korme\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/ChartJs.Blazor.Fork" Path="C:\Users\Korme\.nuget\packages\chartjs.blazor.fork\2.0.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\user\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/ChartJs.Blazor.Fork" Path="C:\Users\user\.nuget\packages\chartjs.blazor.fork\2.0.2\build\..\staticwebassets\" />
 </StaticWebAssets>
