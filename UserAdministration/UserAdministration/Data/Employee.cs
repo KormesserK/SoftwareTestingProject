@@ -44,17 +44,15 @@ namespace UserAdministration.Data
         {
         }
 
-        public bool AllPropertiesSet()
-        {
-            return (ID != "" &&Firstname != "" && Lastname != "" && SocialSecurityNumber != "" && Birthdate != new DateTime(1900, 1, 1));
-        }
+        //public bool AllPropertiesSet()
+        //{
+        //    return (ID != "" &&Firstname != "" && Lastname != "" && SocialSecurityNumber != "" && Birthdate != new DateTime(1900, 1, 1));
+        //}
 
         public string ToCSVLine()
         {
             return ID + ";" +Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive;
         }
-
-
 
         public static void WriteEmployeeToCSV(Employee employee)
         {
@@ -74,7 +72,7 @@ namespace UserAdministration.Data
             }
         }
 
-        public static void OverrideWholeCSVFile(List<Employee> employeeList){
+        private static void OverrideWholeCSVFile(List<Employee> employeeList){
             File.Delete(c_FileName);
             foreach(var employee in employeeList){
                 Employee.WriteEmployeeToCSV(employee);

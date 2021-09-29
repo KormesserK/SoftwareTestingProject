@@ -33,7 +33,7 @@
 @code {
 
     public UserAdministration.Data.Employee Employee = new Data.Employee();
-
+    public string employeeID;
 
 
     public void HandleValidSubmit()
@@ -41,6 +41,7 @@
         Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
         Console.WriteLine("HandleValidSubmit called");
         UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
+        employeeID = Employee.ID;
         Employee = new Data.Employee();
     }
 }

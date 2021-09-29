@@ -37,8 +37,8 @@
 
 @code {
 
-    private List<Data.Employee> EmployeeList = Data.Employee.ReadAllEmployees();
-    private Data.Employee ShownEmployee = new Data.Employee();
+    public List<Data.Employee> EmployeeList = Data.Employee.ReadAllEmployees();
+    public Data.Employee ShownEmployee = new Data.Employee();
 
     protected override void OnInitialized()
     {
@@ -51,7 +51,7 @@
         Console.WriteLine("HandleValidSubmit called");
     }
 
-    private void ShowNextEmployee()
+    public void ShowNextEmployee()
     {
         try
         {
@@ -62,7 +62,7 @@
         }
     }
 
-    private void ShowLastEmployee()
+    public void ShowLastEmployee()
     {
         try
         {

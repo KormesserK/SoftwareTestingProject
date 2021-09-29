@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TMz6+VsrnAFPVg4IvSvTdBOJXVvz074BiL5yEdsNrE6aZ1RqOfK8YuICCGvKwxDAVsUF8F2tJ83mf/+n1Mue+w==",
+  "dgSpecHash": "jfxpAP7ZBZLNkZdXfTMKRihNGsgqu7joUgM097X5jVakedfHPuh/qWIZuoprxfHLJiXUp5VCikYhqIxY+DN+rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\blazored.toast\\3.1.2\\blazored.toast.3.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\chartjs.blazor.fork\\2.0.2\\chartjs.blazor.fork.2.0.2.nupkg.sha512",

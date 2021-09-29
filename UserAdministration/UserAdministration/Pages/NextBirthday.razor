@@ -9,7 +9,7 @@
 
 @code {
 
-    private List<Data.Employee> EmployeeList;
+    public List<Data.Employee> EmployeeList;
     private string NextBirthdayEmp;
 
     protected override void OnInitialized()
@@ -18,7 +18,7 @@
         NextBirthdayEmp = NameOfNextBirthday();
     }
 
-    private string NameOfNextBirthday()
+    public string NameOfNextBirthday()
     {
         var birthdayEmployee = CalculateNextBirthday();
         return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Day + "." + birthdayEmployee.Birthdate.Month + "." + birthdayEmployee.Birthdate.Year;

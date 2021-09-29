@@ -13,70 +13,70 @@ namespace UserAdministration.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 1 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 2 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 3 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 4 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 5 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 6 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 7 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 8 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using UserAdministration;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 9 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using UserAdministration.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 10 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using ChartJs.Blazor;
 
 #line default
@@ -91,7 +91,7 @@ using ChartJs.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\NextBirthday.razor"
+#line 10 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\NextBirthday.razor"
        
 
     private List<Data.Employee> EmployeeList;
@@ -106,7 +106,7 @@ using ChartJs.Blazor;
     private string NameOfNextBirthday()
     {
         var birthdayEmployee = CalculateNextBirthday();
-        return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Date;
+        return birthdayEmployee.Firstname + " " + birthdayEmployee.Lastname + " with a Birthday on " + birthdayEmployee.Birthdate.Day + "." + birthdayEmployee.Birthdate.Month + "." + birthdayEmployee.Birthdate.Year;
     }
 
     private Data.Employee CalculateNextBirthday()
@@ -116,16 +116,20 @@ using ChartJs.Blazor;
         EmployeeList = Data.Employee.ReadAllEmployees();
         Data.Employee nextBirthdayEmployee = new Data.Employee();
 
-        foreach(Data.Employee emp in EmployeeList)
+        foreach (Data.Employee emp in EmployeeList)
         {
             emp.Birthdate = new DateTime(today.Year, emp.Birthdate.Month, emp.Birthdate.Day);
-            var daysBetween = Convert.ToInt32(Math.Abs((emp.Birthdate - today).TotalDays));
-            if (daysBetween < minAmountBetweenNowAndBirthday)
+            if (emp.Birthdate >= today)
             {
-                nextBirthdayEmployee = emp;
-                minAmountBetweenNowAndBirthday = daysBetween;
+                var daysBetween = Convert.ToInt32(Math.Abs((emp.Birthdate - today).TotalDays));
+                if (daysBetween < minAmountBetweenNowAndBirthday)
+                {
+                    nextBirthdayEmployee = emp;
+                    minAmountBetweenNowAndBirthday = daysBetween;
+                }
             }
         }
+    
         return nextBirthdayEmployee;
     }
 

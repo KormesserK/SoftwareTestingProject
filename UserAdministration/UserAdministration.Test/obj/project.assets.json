@@ -4383,11 +4383,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
       "projectName": "UserAdministration.Test",
-      "projectPath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
+      "projectPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4404,8 +4404,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
-              "projectPath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj"
+            "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj"
             }
           }
         }
