@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAdministration", "UserAdministration\UserAdministration.csproj", "{D72058FA-3068-456C-A101-4EA249990640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAdministration.Test", "UserAdministration.Test\UserAdministration.Test.csproj", "{338259D1-28F6-455C-9F7C-0F98E93C6E53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAdministration.Test", "UserAdministration.Test\UserAdministration.Test.csproj", "{338259D1-28F6-455C-9F7C-0F98E93C6E53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

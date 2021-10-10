@@ -82,8 +82,8 @@ using ChartJs.Blazor;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/AddEmployee")]
-    public partial class AddEmployee : UserAdministration.Data.Employee
+    [Microsoft.AspNetCore.Components.RouteAttribute("/RequestVacation")]
+    public partial class RequestVacation : UserAdministration.Data.Employee
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,22 +91,26 @@ using ChartJs.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\AddEmployee.razor"
+#line 26 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\RequestVacation.razor"
        
 
-    public UserAdministration.Data.Employee Employee = new Data.Employee();
+    public Data.Vacation Vacation = new Data.Vacation();
     public string employeeID;
+    private string Availability;
 
-
-    public void HandleValidSubmit()
+    private void HandleValidSubmit()
     {
-        Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
         Console.WriteLine("HandleValidSubmit called");
-        UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
-        employeeID = Employee.ID;
-        UserAdministration.Data.Vacation.WriteEmployeeToCSV(employeeID);
-        Employee = new Data.Employee();
+        if (Vacation.CheckDates())
+        {
+            if (Vacation.CheckRequest(employeeID)) 
+                Availability = "Request accepted";
+            else Availability = "Request rejected";
+        }
+
+        else Availability = "Last day should be after first day!";
     }
+
 
 #line default
 #line hidden

@@ -90,7 +90,7 @@ using ChartJs.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Shared\NavMenu.razor"
+#line 43 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

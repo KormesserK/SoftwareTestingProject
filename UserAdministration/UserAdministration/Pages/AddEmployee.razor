@@ -42,6 +42,7 @@
         Console.WriteLine("HandleValidSubmit called");
         UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
         employeeID = Employee.ID;
+        UserAdministration.Data.Vacation.WriteEmployeeToCSV(employeeID);
         Employee = new Data.Employee();
     }
 }

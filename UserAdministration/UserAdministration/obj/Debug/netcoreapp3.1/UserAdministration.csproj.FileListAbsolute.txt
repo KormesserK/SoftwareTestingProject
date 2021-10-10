@@ -183,3 +183,5 @@ C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdminis
 C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\obj\Debug\netcoreapp3.1\UserAdministration.dll
 C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\obj\Debug\netcoreapp3.1\UserAdministration.pdb
 C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\obj\Debug\netcoreapp3.1\UserAdministration.genruntimeconfig.cache
+C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RequestVacation.razor.g.cs
+C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\obj\Debug\netcoreapp3.1\Razor\Pages\RequestVacation.razor.g.cs

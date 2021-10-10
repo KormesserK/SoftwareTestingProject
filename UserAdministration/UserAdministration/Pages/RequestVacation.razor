@@ -1,0 +1,45 @@
+﻿@page "/RequestVacation"
+
+@inherits UserAdministration.Data.Employee
+
+<h3>Request Vacation</h3>
+
+<EditForm Model="@Vacation" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <br />
+    <label for="firstDay">First Day</label>
+    <InputDate id="firstDay" @bind-Value="Vacation.firstDay"></InputDate>
+    <br /><label for="lastDay">Last Day</label>
+    <InputDate id="lastDay" @bind-Value="Vacation.lastDay"></InputDate>
+    <br /><label for="employee">Employee-ID</label>
+    <InputText id="employee" @bind-Value="employeeID"></InputText>
+    <br />
+    <br />
+
+    <button type="submit">Request</button>
+    <br /><br /><br />
+</EditForm>
+@(Availability)
+
+@code {
+
+    public Data.Vacation Vacation = new Data.Vacation();
+    public string employeeID;
+    private string Availability;
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("HandleValidSubmit called");
+        if (Vacation.CheckDates())
+        {
+            if (Vacation.CheckRequest(employeeID)) 
+                Availability = "Request accepted";
+            else Availability = "Request rejected";
+        }
+
+        else Availability = "Last day should be after first day!";
+    }
+
+}
