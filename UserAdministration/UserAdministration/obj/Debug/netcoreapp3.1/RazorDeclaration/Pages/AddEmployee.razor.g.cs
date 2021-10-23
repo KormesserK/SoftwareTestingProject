@@ -101,7 +101,8 @@ using ChartJs.Blazor;
 
     public void HandleValidSubmit()
     {
-        if (CheckIfSSNExists(Employee.SocialSecurityNumber))
+        Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
+        if (CheckIfIDExists(Employee.ID))
         {
             Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
             Console.WriteLine("HandleValidSubmit called");
@@ -111,7 +112,7 @@ using ChartJs.Blazor;
             Message = "Employee added";
         }
         else
-            Message = "SSN already exists";
+            Message = "SSN+Firstname already exists";
     }
 
 #line default

@@ -81,12 +81,13 @@ namespace UserAdministration.Data
                 Employee.WriteEmployeeToCSV(employee);
             }
         }
-        public static bool CheckIfSSNExists(string ssn)
+        public static bool CheckIfIDExists(string ssn)
         {
             List<Employee> employeeList = ReadAllEmployees();
             foreach (var emp in employeeList)
             {
-                if (emp.SocialSecurityNumber.Equals(ssn))
+                var id = emp.SocialSecurityNumber + emp.Firstname;
+                if (id.Equals(ssn))
                     return false;
             }
             return true;
