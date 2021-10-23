@@ -29,8 +29,10 @@ namespace UserAdministration.Data
         [Required]
         public bool IsActive { get; set; } = false;
 
+        public int VacDays { get; set; } = 25;
+
         public Employee(string iD, string firstname, string lastname, string socialSecurityNumber, 
-            DateTime birthdate, bool isActive)
+            DateTime birthdate, bool isActive, int vacDays)
         {
             ID = iD;
             Firstname = firstname;
@@ -38,6 +40,7 @@ namespace UserAdministration.Data
             SocialSecurityNumber = socialSecurityNumber;
             Birthdate = birthdate;
             IsActive = isActive;
+            VacDays = vacDays;
         }
 
         public Employee()
@@ -51,7 +54,7 @@ namespace UserAdministration.Data
 
         public string ToCSVLine()
         {
-            return ID + ";" +Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive;
+            return ID + ";" +Firstname + ";" + Lastname + ";" + SocialSecurityNumber + ";" + Birthdate.Year + "," + Birthdate.Month + "," + Birthdate.Day + ";" + IsActive + ";" + VacDays;
         }
 
         public static void WriteEmployeeToCSV(Employee employee)
@@ -78,7 +81,16 @@ namespace UserAdministration.Data
                 Employee.WriteEmployeeToCSV(employee);
             }
         }
-
+        public static bool CheckIfSSNExists(string ssn)
+        {
+            List<Employee> employeeList = ReadAllEmployees();
+            foreach (var emp in employeeList)
+            {
+                if (emp.SocialSecurityNumber.Equals(ssn))
+                    return false;
+            }
+            return true;
+        }
         public static List<Employee> ReadAllEmployees()
         {
             try
@@ -99,14 +111,14 @@ namespace UserAdministration.Data
             foreach (var line in allLines)
             {
                 var splitLine = line.Split(';');
-                if (splitLine.Length != 6)
+                if (splitLine.Length != 7)
                 {
                     throw new Exception("Error while reading file, the amount of arguments in this line is not correct");
                 }
 
                 var birthdate = splitLine[4].Split(',');
                 var employee = new Employee(splitLine[0], splitLine[1], splitLine[2], splitLine[3],
-                    new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])), Convert.ToBoolean(splitLine[5]));
+                    new DateTime(Convert.ToInt32(birthdate[0]), Convert.ToInt32(birthdate[1]), Convert.ToInt32(birthdate[2])), Convert.ToBoolean(splitLine[5]), Convert.ToInt32(splitLine[6]));
                 employeeList.Add(employee);
             }
 
@@ -115,20 +127,27 @@ namespace UserAdministration.Data
 
         public static void UpdateEmployee(List<Employee> employeeList, Employee employee)
         {
-            int indexOfEmployeeToChange = -1;
-            foreach(var emp in employeeList)
-            {
-                if(employee.ID == emp.ID)
-                {
-                    indexOfEmployeeToChange = employeeList.IndexOf(emp);
-                }
-            }
+            int indexOfEmployeeToChange = GetEmployeeIdx(employeeList, employee.ID);
 
             if (indexOfEmployeeToChange != -1)
             {
                 employeeList[indexOfEmployeeToChange] = employee;
                 Employee.OverrideWholeCSVFile(employeeList);
             }
+        }
+
+        public static int GetEmployeeIdx(List<Employee> employeeList, string id)
+        {
+            int indexOfEmployeeToChange = -1;
+            foreach (var emp in employeeList)
+            {
+                if (id == emp.ID)
+                {
+                    indexOfEmployeeToChange = employeeList.IndexOf(emp);
+                }
+            }
+
+            return indexOfEmployeeToChange;
         }
     }
 }

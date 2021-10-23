@@ -11,7 +11,7 @@ namespace UserAdministration.Data
     public class Vacation : ComponentBase
 
     {
-        private static string c_FileName = "Vacation.csv";
+        private static string c_FileName = "Employee.csv";
 
         [Required]
         public DateTime firstDay { get; set; } = DateTime.Now;
@@ -31,7 +31,7 @@ namespace UserAdministration.Data
         {
             int cnt = 0;
             DateTime date = firstDay;
-            double numberOfDays = (lastDay - firstDay).TotalDays+1;
+            double numberOfDays = (lastDay - firstDay).TotalDays + 1;
             for (int i = 0; i < numberOfDays; i++)
             {
                 if (date.DayOfWeek.ToString() != "Saturday" && date.DayOfWeek.ToString() != "Sunday")
@@ -45,7 +45,7 @@ namespace UserAdministration.Data
 
 
 
-        public bool CheckRequest(string id)
+        public string CheckRequest(string id)
         {
             var allLines = File.ReadLines(c_FileName);
             var availableDays = 0;
@@ -53,32 +53,34 @@ namespace UserAdministration.Data
             {
                 var splitLine = line.Split(";");
                 if (splitLine[0] == id)
-                    availableDays = Int32.Parse(splitLine[1]);
+                    availableDays = Int32.Parse(splitLine[6]);
             }
-            
-            
-            if (availableDays!=0 && Count()<=availableDays)
-                return true;
-            return false;
-        }
 
-        private static void CheckIfFileExists_IfNot_Create()
-        {
-            if (!File.Exists(c_FileName))
+            int reqDays = Count();
+            if (reqDays == 0)
             {
-                Console.WriteLine("new File created");
-                File.WriteAllText(c_FileName, "");
+                return "Request rejected: this day(s) is (are) already off";
             }
+            if (availableDays == 0)
+                return "Request rejected: no more days off";
+            else if (reqDays > availableDays)
+                return "Request rejected: only " + availableDays + " days off";
+            else
+            {
+                UpdateVaccation(id, reqDays);
+                return "Request accepted";
+            }
+
+
+
         }
 
-        public static void WriteEmployeeToCSV(string employeeid)
+        private static void UpdateVaccation(string id, int reqDays)
         {
-            CheckIfFileExists_IfNot_Create();
-            var csvLine = new List<string>();
-            csvLine.Add(employeeid + ";25");
-            File.AppendAllLines(c_FileName, csvLine);
+            List<Data.Employee> EmployeeList = Data.Employee.ReadAllEmployees();
+            Employee newEmployee = EmployeeList[Employee.GetEmployeeIdx(EmployeeList, id)];
+            newEmployee.VacDays -= reqDays;
+            Employee.UpdateEmployee(EmployeeList, newEmployee);
         }
-
-
     }
 }

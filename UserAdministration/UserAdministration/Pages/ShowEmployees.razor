@@ -8,23 +8,27 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Security Number</th>
             <th>Birthdate</th>
             <th>IsActive</th>
+            <th>VacDays</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var employee in employees)
         {
-            <tr>
-                <td>@employee.Firstname</td>
-                <td>@employee.Lastname</td>
-                <td>@employee.SocialSecurityNumber</td>
-                <td>@employee.Birthdate</td>
-                <td>@employee.IsActive</td>
-            </tr>
+        <tr>
+            <td>@employee.ID</td>
+            <td>@employee.Firstname</td>
+            <td>@employee.Lastname</td>
+            <td>@employee.SocialSecurityNumber</td>
+            <td>@employee.Birthdate</td>
+            <td>@employee.IsActive</td>
+            <td>@employee.VacDays</td>
+        </tr>
         }
     </tbody>
 </table>

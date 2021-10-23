@@ -96,16 +96,22 @@ using ChartJs.Blazor;
 
     public UserAdministration.Data.Employee Employee = new Data.Employee();
     public string employeeID;
+    private string Message="";
 
 
     public void HandleValidSubmit()
     {
-        Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
-        Console.WriteLine("HandleValidSubmit called");
-        UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
-        employeeID = Employee.ID;
-        UserAdministration.Data.Vacation.WriteEmployeeToCSV(employeeID);
-        Employee = new Data.Employee();
+        if (CheckIfSSNExists(Employee.SocialSecurityNumber))
+        {
+            Employee.ID = Employee.SocialSecurityNumber + Employee.Firstname;
+            Console.WriteLine("HandleValidSubmit called");
+            UserAdministration.Data.Employee.WriteEmployeeToCSV(Employee);
+            employeeID = Employee.ID;
+            Employee = new Data.Employee();
+            Message = "Employee added";
+        }
+        else
+            Message = "SSN already exists";
     }
 
 #line default

@@ -102,12 +102,7 @@ using ChartJs.Blazor;
     {
         Console.WriteLine("HandleValidSubmit called");
         if (Vacation.CheckDates())
-        {
-            if (Vacation.CheckRequest(employeeID)) 
-                Availability = "Request accepted";
-            else Availability = "Request rejected";
-        }
-
+            Availability = Vacation.CheckRequest(employeeID);
         else Availability = "Last day should be after first day!";
     }
 

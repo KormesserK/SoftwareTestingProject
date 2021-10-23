@@ -91,7 +91,7 @@ using ChartJs.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\ShowEmployees.razor"
+#line 36 "C:\Users\user\source\repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\ShowEmployees.razor"
        
     private List<UserAdministration.Data.Employee> employees = new List<UserAdministration.Data.Employee>();
 
