@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj": {}
+    "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj": {
+    "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
         "projectName": "UserAdministration.Test",
-        "projectPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\obj\\",
+        "projectPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\UserAdministration.Test.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj"
+              "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
+                "projectPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj"
               }
             }
           }
@@ -72,21 +76,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
+    "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
         "projectName": "UserAdministration",
-        "projectPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
+        "projectPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -143,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

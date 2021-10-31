@@ -11,16 +11,17 @@ namespace UserAdministration.Test
     class AddEmployeeTests
     {
         [Test]
-        public void Test1()
+        public void AddEmployee()
         {
             //arrange
             AddEmployee newEmployee = new AddEmployee();
 
-            newEmployee.Employee.Firstname = "A";
-            newEmployee.Employee.Lastname = "M";
+            newEmployee.Employee.Firstname = "Named";
+            newEmployee.Employee.Lastname = "B";
             newEmployee.Employee.SocialSecurityNumber = "1234";
             newEmployee.Employee.Birthdate = new DateTime(1999, 12, 1);
             newEmployee.Employee.IsActive = true;
+            newEmployee.Employee.VacDays = 25;
 
 
             //act
@@ -30,20 +31,21 @@ namespace UserAdministration.Test
             //assert
             Assert.IsNotEmpty(actual);
             Assert.IsNotNull(actual);
-            Assert.AreEqual("1234A", actual);
+            Assert.AreEqual("1234Named", actual);
         }
      
         [Test]
-        public void Test2()
+        public void AddEmployeIDCheck()
         {
             //arrange
             AddEmployee newEmployee = new AddEmployee();
 
-            newEmployee.Employee.Firstname = "A";
-            newEmployee.Employee.Lastname = "M";
+            newEmployee.Employee.Firstname = "Not";
+            newEmployee.Employee.Lastname = "B";
             newEmployee.Employee.SocialSecurityNumber = "1234";
             newEmployee.Employee.Birthdate = new DateTime(1999, 12, 1);
             newEmployee.Employee.IsActive = true;
+            newEmployee.Employee.VacDays = 25;
 
 
             //act

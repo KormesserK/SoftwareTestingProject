@@ -21,6 +21,7 @@ namespace UserAdministration.Test
             newEmployee.SocialSecurityNumber = "1234";
             newEmployee.Birthdate = new DateTime(1999, 12, 1);
             newEmployee.IsActive = true;
+            newEmployee.VacDays = 25;
             newEmployee.ID = newEmployee.SocialSecurityNumber + newEmployee.Firstname;
 
             //act
@@ -29,7 +30,7 @@ namespace UserAdministration.Test
             //assert
             Assert.IsNotEmpty(actual);
             Assert.IsNotNull(actual);
-            Assert.AreEqual("1234A;A;M;1234;1999,12,1;True", actual);
+            Assert.AreEqual("1234A;A;M;1234;1999,12,1;True;25", actual);
         }
 
         [Test]
@@ -105,8 +106,8 @@ namespace UserAdministration.Test
         {
             //arrange
             IEnumerable<string> lines = Enumerable.Empty<string>();
-            lines = lines.Append("1234A;A;M;1234;1999,12,1;True");
-            lines = lines.Append("1239Ay;Ay;Me;1239;1995,10,17;False");
+            lines = lines.Append("1234A;A;M;1234;1999,12,1;True;25");
+            lines = lines.Append("1239Ay;Ay;Me;1239;1995,10,17;False;25");
             
 
 
@@ -119,6 +120,7 @@ namespace UserAdministration.Test
             newEmployee.Birthdate = new DateTime(1999, 12, 1);
             newEmployee.IsActive = true;
             newEmployee.ID = newEmployee.SocialSecurityNumber + newEmployee.Firstname;
+            newEmployee.VacDays = 25;
             employeeList.Add(newEmployee);
 
             Employee newEmployee2 = new Employee();
@@ -128,6 +130,7 @@ namespace UserAdministration.Test
             newEmployee2.Birthdate = new DateTime(1995, 10, 17);
             newEmployee2.IsActive = false;
             newEmployee2.ID = newEmployee2.SocialSecurityNumber + newEmployee2.Firstname;
+            newEmployee2.VacDays = 25;
             employeeList.Add(newEmployee2);
 
             
@@ -146,8 +149,8 @@ namespace UserAdministration.Test
             //arrange
 
             IEnumerable<string> lines = Enumerable.Empty<string>();
-            lines = lines.Append("1234A;A;M;1234;1999,12,1;True");
-            lines = lines.Append("1239Ay;Ay;Me;1239;1995,10,17;False");
+            lines = lines.Append("1234A;A;M;1234;1999,12,1;True;25");
+            lines = lines.Append("1239Ay;Ay;Me;1239;1995,10,17;False;25");
 
 
             var employeeList = new List<Employee>();
@@ -159,6 +162,7 @@ namespace UserAdministration.Test
             newEmployee.Birthdate = new DateTime(1999, 12, 1);
             newEmployee.IsActive = true;
             newEmployee.ID = newEmployee.SocialSecurityNumber + newEmployee.Firstname;
+            newEmployee.VacDays = 25;
             employeeList.Add(newEmployee);
 
             Employee newEmployee2 = new Employee();
@@ -168,6 +172,7 @@ namespace UserAdministration.Test
             newEmployee2.Birthdate = new DateTime(1995, 10, 17);
             newEmployee2.IsActive = true;
             newEmployee2.ID = newEmployee2.SocialSecurityNumber + newEmployee2.Firstname;
+            newEmployee2.VacDays = 25;
             employeeList.Add(newEmployee2);
 
 

@@ -579,19 +579,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\marti\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+      "projectUniqueName": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
       "projectName": "UserAdministration",
-      "projectPath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
+      "projectPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\UserAdministration.csproj",
+      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marti\\Source\\Repos\\SoftwareTestingProject\\UserAdministration\\UserAdministration\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -648,7 +653,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

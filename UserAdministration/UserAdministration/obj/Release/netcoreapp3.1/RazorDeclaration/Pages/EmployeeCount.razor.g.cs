@@ -13,70 +13,70 @@ namespace UserAdministration.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 1 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 2 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 3 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 4 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 5 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 6 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 7 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 8 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using UserAdministration;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 9 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using UserAdministration.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
+#line 10 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\_Imports.razor"
 using ChartJs.Blazor;
 
 #line default
@@ -91,9 +91,9 @@ using ChartJs.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\user\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\EmployeeCount.razor"
+#line 15 "C:\Users\marti\Source\Repos\SoftwareTestingProject\UserAdministration\UserAdministration\Pages\EmployeeCount.razor"
            
-        private List<Data.Employee> EmployeeList;
+        public List<Data.Employee> EmployeeList;
         private string CalculatedGrowthString;
         private string NumberOfEmployeesString;
 
@@ -105,7 +105,7 @@ using ChartJs.Blazor;
             NumberOfEmployeesString = NumberOfEmployees();
         }
 
-        private string CalculateGrowth()
+        public string CalculateGrowth()
         {
             double startAmount = 3;
             double actualAmount = EmployeeList.Count();
@@ -113,9 +113,9 @@ using ChartJs.Blazor;
             return "This is a growth of " + Math.Round(growth, 2).ToString() + " percent";
         }
 
-        private string NumberOfEmployees()
+        public string NumberOfEmployees()
         {
-            return "The number of our Employees has grown from 4 to " + EmployeeList.Count();
+            return "The number of our Employees has grown from 3 to " + EmployeeList.Count();
         }
     
 
